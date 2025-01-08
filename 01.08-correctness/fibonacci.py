@@ -1,9 +1,9 @@
 def fibonacci(n):
     """
-    Compute the n'th Fibonacci number.
+    Compute Fibonacci numbers.
 
     :param n: A non-negative integer
-    :return: The corresponding Fibonacci number.
+    :return: The n'th Fibonacci number
     """
     if n == 0:
         return 0
