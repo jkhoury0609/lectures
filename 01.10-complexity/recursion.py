@@ -10,12 +10,12 @@ def fibonacci(n):
     """
 
     # NOTE: This function had complexity O(1.65^n), but *not* because it was
-    #       written recursively. Rather, the recursive case does a lot more
-    #       work than it should need to. Suppose we wish to compute f(4):
+    #       written recursively. Rather, it did work that it shouldn't have
+    #       to do. Consider computing f(4):
     #        1. By definition, f(4) = f(3) + f(2).
-    #        2. First, we compute f(3) = f(2) + f(1).
+    #        2. First, compute f(3) = f(2) + f(1).
     #           ...
-    #        3. Then, we compute f(2) again.
+    #        3. Then, compute f(2) again!
     #       ...doing work recursively is not inherently inefficient. The issue
     #       is that this function was doing the *same work multiple times*.
 
