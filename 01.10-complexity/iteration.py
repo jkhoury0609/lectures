@@ -8,6 +8,9 @@ def fibonacci(n):
     :param n: A non-negative integer
     :return: The n'th Fibonacci number
     """
+
+    # NOTE: This function has complexity O(n).
+
     current = previous = None
 
     for i in range(n + 1):

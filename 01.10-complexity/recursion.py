@@ -6,14 +6,26 @@ def fibonacci(n):
     Compute Fibonacci numbers.
 
     :param n: A non-negative integer
-    :return: The n'th Fibonacci number
+    :return: The n'th and (n - 1)'st Fibonacci numbers
     """
+
+    # NOTE: This function had complexity O(1.65^n), but *not* because it was
+    #       written recursively. Rather, it did work that it shouldn't have
+    #       to do. Consider computing f(4):
+    #        1. By definition, f(4) = f(3) + f(2).
+    #        2. First, compute f(3) = f(2) + f(1).
+    #           ...
+    #        3. Then, compute f(2) again!
+    #       ...doing work recursively is not inherently inefficient; doing the
+    #       *same work multiple times* is.
+
     if n == 0:
-        return 0
+        return (0, None)
     elif n == 1:
-        return 1
+        return (1, 0)
     else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+        current, previous = fibonacci(n - 1)
+        return (current + previous, current)
 
 
 if __name__ == "__main__":
