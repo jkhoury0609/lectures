@@ -23,16 +23,16 @@ def get(lst, idx):
     #       access a node in the list, we must start at the head and repeatedly
     #       access each node's next attribute.
     #
-    # Start with a current node being the head of the given lst.
-    # For i from 0 to the given idx, do:
+    # Start with a current node being the given lst's head.
+    # For i from 0 to the given idx:
     #     Set the current node to the current node's next.
     # Return the current node's value.
     pass
 
 
 def set(lst, idx, value):
-    # Start with a current node being the head of the given lst.
-    # For i from 0 to the given idx, do:
+    # Start with a current node being the given lst's head.
+    # For i from 0 to the given idx:
     #     Set the current node to the current node's next.
     # Set the current node's value to the given value.
     pass
@@ -55,10 +55,9 @@ def add(lst, idx, value):
     #     Start with a current node being the head of the given lst.
     #     For i from 0 to the given idx - 1, do:
     #         Set the current node to the current node's next.
-    #    
     #     Set the new node's next to the current node's next.
     #     Set the current node's next to the new node.
-    # Increment the given lst's size. 
+    # Increment the given lst's size.
     pass
 
 

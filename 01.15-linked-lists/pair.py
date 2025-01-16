@@ -1,8 +1,8 @@
-# NOTE: A pair is very similar to a list, in that pairs are also finite,
-#       ordered collections of elements. The only difference is that pairs can
-#       only contain precisely two elements. We could define a "triple" that
-#       contains precisely three elements, but then we would just have the same
-#       problem for a collection of four elements...
+# NOTE: Just like a list, a pair is a finite, ordered collection of elements.
+#       However, lists must be able to contain arbitrarily many elements, and
+#       pairs can only contain exactly two. If we wanted to contain three
+#       elements, we could add a third attribute, but then we would just have
+#       exactly the same problem with four elements...
 
 class Pair:
     """ A pair of elements """
@@ -19,8 +19,7 @@ class Pair:
     def __repr__(self):
         return "Pair(%r, %r)" % (self.first, self.second)
 
-
-# NOTE: ...alternatively, since the elements of a pair may have any type, the
-#       second element of a pair could be *another pair*. We can then create
-#       arbitrarily large collections by nesting arbitrarily many pairs:
+# NOTE: ...instead, since the elements of a pair can have any type, the second
+#       element could be *another pair*. We can then contain arbitrarily many
+#       elements by nesting arbitrarily many pairs:
 lst = Pair('a', Pair('b', Pair('c', None)))
