@@ -62,4 +62,12 @@ def add(lst, idx, value):
 
 
 def remove(lst, idx):
+    # If the given idx is 0, then:
+    #     Set the given lst's head to the given lst's head's next.
+    # Else, do:
+    #     Start with a current node being the head of the given lst.
+    #     For i from 0 to the given idx - 1, do:
+    #         Set the current node to the current node's next.
+    #     Set the current node's next to the current node's next's next.
+    # Decrement the given lst's size.
     pass
