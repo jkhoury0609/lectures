@@ -47,23 +47,27 @@ def set(lst, idx, value):
 def add(lst, idx, value):
     # Create a new node containing the given value.
     # If the given lst's size is 0, then:
-    #     NOTE: We need a special case for adding to empty lists, because that
-    #           is the unique scenario in which the new node is becoming both
-    #           the head and the tail of the list.
+    #     NOTE: With a doubly linked list, we need a special case for adding to
+    #           an empty list, which is the unique scenario in which the new
+    #           node is both the head and the tail.
     #
     #     Set the new node's next to None.
     #     Set the new node's previous to None.
     #     Set the given lst's head to the new node.
     #     Set the given lst's tail to the new node.
     # Else if the given idx is 0, then:
+    #     NOTE: We do still need a special case for adding to the beginning of
+    #           a non-empty list, it's just that in this case the new node is
+    #           only the head, but not the tail.
+    #
     #     Set the new node's next to the given lst's head.
-    #     Set the new node's previous to None.
+    #     Set the new node's previous None.
     #     Set the given lst's head's previous to the new node.
     #     Set the given lst's head to the new node.
     # Else if the given idx is the given lst's size, then:
-    #     NOTE: Just as adding to the beginning of the list is a special case
-    #           for updating the head, adding to the end of the list must also
-    #           be a special case for updating the tail.
+    #     NOTE: Just as a singly linked list must special case adding to the
+    #           head, a doubly linked list must also special case adding to
+    #           the tail.
     #
     #     Set the new node's next to None.
     #     Set the new node's previous to the given lst's tail.
