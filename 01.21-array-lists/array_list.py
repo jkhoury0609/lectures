@@ -12,7 +12,7 @@ class List:
 
 def get(lst, idx):
     pass
-
+    d
 
 def set(lst, idx, value):
     pass
