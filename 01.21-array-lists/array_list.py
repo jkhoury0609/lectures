@@ -2,18 +2,18 @@ class List:
     """ An ordered collection of elements """
 
     def __init__(self):
-        # NOTE: Since an array has fixed size, we have to start out by making
-        #       a bigger array than we actually need, and we must distinguish
+        # NOTE: Since an array has fixed length, we have to allocate space for
+        #       more elements than we actually need, and we must distinguish
         #       between the number of elements in the list and the number of
-        #       spaces for elements in the array.
+        #       available spaces for elements in the array.
 
         # The length of the backing array:
         self.capacity = 4
 
-        # NOTE: Python does not expose true arrays to the programmer, so we
-        #       will instead pretend that lists are arrays. We'll create a list
-        #       that initially contains only Nones, and then avoid using any
-        #       of the list operations (e.g., appending to the list).
+        # NOTE: Unlike languages like C or Java, Python does not expose true
+        #       arrays to programmers, but we can pretend that a list is an
+        #       array: we'll create a list that contains only Nones, and then
+        #       avoid using any list operations (e.g., append or extend).
 
         # The backing array:
         self.array = [None] * self.capacity
@@ -36,17 +36,17 @@ def set(lst, idx, value):
 
 
 def add(lst, idx, value):
-    # NOTE: If we only increased capacity by exactly enough to contain the new
-    #       element, we would have the same problem any time we wish to add
-    #       more elements in the future. Instead, we double the size of the
-    #       array: *some* additions will require us to expand the capacity, but
-    #       *most* additions will find that they already have enough space: the
-    #       "amortized" complexity of adding elements can ignore the complexity
-    #       of increasing the capacity.
+    # NOTE: Since arrays have fixed size, if we need space for more elements,
+    #       we have to create a completely new, larger array. Rather than just
+    #       making space for one more element, we instead make space for twice
+    #       as many elements; *some* additions will require us to increase the
+    #       capacity, but *most* additions will find that we already have
+    #       enough space: on average, the "amortized" complexity of adding
+    #       elements can ignore the complexity of increasing the capacity.
     #
-    # If the size is equal to the capacity:
+    # If the size is equal to the capacity, then:
     #     Set the capacity to capacity * 2.
-    #     Create a new array with that capacity.
+    #     Create a new array of that capacity.
     #     (copy the elements from the old array into the new array)
     #     Set the array to the new array.
     #
@@ -66,7 +66,7 @@ def remove(lst, idx):
     # NOTE: Similarly, when removing, we have to shift all the elements after
     #       that index "up" in the array.
     #
-    # For i from the given idx to the size, do:
+    # For i from the given idx to the size - 1, do:
     #     Set the element at i in the array to the element at i + 1.
     #
     # Decrement the size.
