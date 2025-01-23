@@ -19,10 +19,11 @@ class Node:
 
 
 def push(stack, value):
-    # NOTE: A stack is a special case of a list, a list that can only be
-    #       accessed at one terminus. Accessing the beginning of a linked list
-    #       is O(1), whereas accessing the end is O(n), thus, the beginning of
-    #       the linked list ought to be the top-of-stack.
+<<<<<<< HEAD
+    # NOTE: A stack is a list that can only be operated on at one terminus.
+    #       Adding and removing at the beginning of a linked list is O(1), but
+    #       adding and removing at the end of a linked list is O(n). Thus, the
+    #       beginning of the linked list ought to be the top-of-stack.
     #
     # Create a new node containing the given value.
     # Set the new node's next to the given stack's head.

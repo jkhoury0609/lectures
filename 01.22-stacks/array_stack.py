@@ -11,10 +11,10 @@ class Stack:
 
 
 def push(stack, value):
-    # NOTE: A stack is a special case of a list, a list that can only be
-    #       accessed at one terminus. Operating on the end of an array list
-    #       is O(1), whereas operating on the beginning is O(n), thus, the end
-    #       of the array list ought to be the top-of-stack.
+    # NOTE: A stack is a list that can only be operated on at one terminus.
+    #       Adding and removing at the beginning of an array list is O(n), but
+    #       adding and removing at the end of an array list is O(1). Thus, the
+    #       end of the array list ought to be the top-of-stack.
     #
     # If the size is equal to the capacity, then:
     #     Set the capacity to capacity * 2.
@@ -22,7 +22,7 @@ def push(stack, value):
     #     (copy the elements from the old array into the new array)
     #     Set the array to the new array.
     #
-    # Set the element at the stack's size in the array to the given value.
+    # Set the element at the size in the array to the given value.
     # Increment the size.
     pass
 
