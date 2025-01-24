@@ -21,10 +21,10 @@ class Node:
 
 
 def enqueue(queue, value):
-    # NOTE: Given both a reference to the head and a reference to the tail, it
-    #       is possible to add to both the head or the tail in O(1) time. For
-    #       the purposes of enqueueing, it arguably doesn't matter which
-    #       terminus of the list is the front or back of the queue...
+    # NOTE: Given both references to the head and tail nodes, adding to the
+    #       beginning and the end of a linked list are both O(1). Arguably, for
+    #       the purposes of enqueueing, it does not matter which terminus of
+    #       the list is the back of the queue...
     #
     # Create a new node containing the given value.
     #
@@ -35,16 +35,15 @@ def enqueue(queue, value):
     #
     # Set the given queue's tail to the new node.
     # Set the new node's next to None.
-    # Increment the given lst's size.
+    # Increment the given queue's size.
     pass
 
 
 def dequeue(queue):
-    # NOTE: ...but removing from the head of a linked list is O(1), whereas
-    #       removing from the tail is O(n), because we would have to traverse
-    #       the entire list to find the second-to-last node. We would like the
-    #       head of the list to be the front of the queue, thus, the tail must
-    #       be the back.
+    # NOTE: ...but even given both references to the head and tail nodes,
+    #       removing from the beginning of a linked list is O(1) while from the
+    #       end is O(n). We would like the head of the list to be the front of
+    #       the queue, thus, the tail must be the back.
     #
     # If the given queue's size is 1, then:
     #     Set the given queue's head and tail to None.
